@@ -1,14 +1,24 @@
 import 'react-native-gesture-handler';
-import React from 'react'
-import Home from './home/Home.screen'
-import { NavigationContainer } from '@react-navigation/native';
-import { StackNavigator } from '../routes/StackNavigator';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { NavigationContainer } from "@react-navigation/native"
+import { BottomTabNavigator } from '../routes/BottomTabNavigator';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { BottomSheetModalProvider } from '@gorhom/bottom-sheet';
+import { AuthStack } from '../routes/AuthStack';
+import useStore from '../store/store';
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <StackNavigator />
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <BottomSheetModalProvider>
+          <NavigationContainer>
+            {/* <AuthStack /> */}
+            <BottomTabNavigator />
+          </NavigationContainer>
+        </BottomSheetModalProvider>
+      </GestureHandlerRootView>
+    </SafeAreaProvider>
   )
 }
 

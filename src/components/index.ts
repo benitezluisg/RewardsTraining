@@ -1,0 +1,5 @@
+export { default as Input } from './Form/Input.comp'
+export { default as Header } from './Header/Header.comp'
+export { default as PrimaryButton } from './Buttons/Primary.comp'
+export { default as AppointmentCard } from './Cards/AppointmentCard.comp'
+export { default as RewardCard } from './Cards/RewardCard.comp'
